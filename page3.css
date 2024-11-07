@@ -1,550 +1,685 @@
 @charset "utf-8";
 
 
-*{outline: 1px solid rgba(255, 0, 0, 0);}/* 開発用*/
+* {
+    outline: 1px solid rgba(255, 0, 0, 0);
+}
+
+/* 開発用*/
 
 
-html {scroll-behavior: smooth;
+html {
+    scroll-behavior: smooth;
     scroll-padding-top: 120px;
     height: 100vw;
-    overflow-x: hidden;}
+    overflow-x: hidden;
+}
 
-    body {
-        height: 100vw;
-        display:flex;
-        position: relative;
-        height: auto;/* HTMLの高さ */
-        width: 100%;
-        padding: 0;
-        margin: 0;}  
+body {
+    height: 100vw;
+    display: flex;
+    position: relative;
+    height: auto;
+    /* HTMLの高さ */
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
 
 
-            main{
-                background-color: #00ff0000;      /* background テスト用 */
-                padding-bottom:10vw ;
-                top: 700px;
-                z-index: 10;
-                width: 1000%;
-                position: relative;
-                align-items: center;
-                justify-content: center;
-                margin: auto;
-                max-width: 100%;
-                height: auto;
-                display: flex;
-                   /* 最大幅を1200pxに制限 */
-              } 
+main {
+    background-color: #00ff0000;
+    /* background テスト用 */
+    padding-bottom: 10vw;
+    top: 700px;
+    z-index: 10;
+    width: 1000%;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+}
 
 
 /* 下フッター*/
-    /* 帯*/
-           
-    .obi{background-color: rgba(93, 93, 93, 0.364);
-        position:fixed;
-        width: 100%;
-        justify-content: center;
-        vertical-align: middle;
-        margin: auto;
-        height: 70px;
-        z-index: 101;
-      }
+/* 帯*/
 
-    .obi.active{background-color: rgba(0, 0, 0, 0.926);
-        transition : all 0.3s;
-        position: fixed;
-        height: 60px;}
-
-        .obi::after{background-color: rgb(255, 0, 0);
-            content: '';
-            display: block;
-            opacity: 1;
-            position: fixed;
-            top: 0px;
-            width: 100%;
-            height: 10px;
-            z-index: 99;
-            transform: scale(0,1);
-        transition: transform 0.3s;}
-    
-        .obi.active::after{background-color: rgb(255, 0, 0);
-        transform: scale(1,1);}
-
-
-     /* 右のメニューバー*/
-
-@media screen and (1031px <= width <= 10000px) {
-        /* 1025px以上に適用されるCSS（PC用） */   
-.menu{width:0px;} /* 大本の親要素のサイズ*/
-
-.links{display:flex;/* inline or  flex;横　grid 縦*/
+.obi {
+    background-color: rgba(93, 93, 93, 0.364);
     position: fixed;
-    top: 10px;
-    right: 50px;
-    padding-right: 1px;
-    color: rgb(255, 255, 255);
-    list-style: none;
-    transition: all .3s;}
+    width: 100%;
+    justify-content: center;
+    vertical-align: middle;
+    margin: auto;
+    height: 70px;
+    z-index: 101;
+}
+
+.obi.active {
+    background-color: rgba(0, 0, 0, 0.926);
+    transition: all 0.3s;
+    position: fixed;
+    height: 60px;
+}
+
+.obi::after {
+    background-color: rgb(255, 0, 0);
+    content: '';
+    display: block;
+    opacity: 1;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 10px;
+    z-index: 99;
+    transform: scale(0, 1);
+    transition: transform 0.3s;
+}
+
+.obi.active::after {
+    background-color: rgb(255, 0, 0);
+    transform: scale(1, 1);
+}
 
 
-.links.active{display:flex;/* inline or  flex;横　grid 縦*/
-top: 0px;
-transition: all .3s;}
+/* 右のメニューバー*/
+
+@media screen and (1031px <=width <=10000px) {
+
+    /* 1025px以上に適用されるCSS（PC用） */
+    .menu {
+        width: 0px;
+    }
+
+    /* 大本の親要素のサイズ*/
+
+    .links {
+        display: flex;
+        /* inline or  flex;横　grid 縦*/
+        position: fixed;
+        top: 10px;
+        right: 50px;
+        padding-right: 1px;
+        color: rgb(255, 255, 255);
+        list-style: none;
+        transition: all .3s;
+    }
+
+
+    .links.active {
+        display: flex;
+        /* inline or  flex;横　grid 縦*/
+        top: 0px;
+        transition: all .3s;
+    }
 
 
 
-.hamburger input{display:none ;}
-.list{position: relative;
-    width: 100px;
-    height: 20PX;
-    z-index: 5000;
-    font-size: 20px;} 
-.list-no{width: 0px;
-    height: 0px;
-    font-size: 0.1px;
-    padding: 0;
-    margin: 0;
-    opacity: 0;} 
-label  a {position: absolute;}
+    .hamburger input {
+        display: none;
+    }
+
+    .list {
+        position: relative;
+        width: 100px;
+        height: 20PX;
+        z-index: 5000;
+        font-size: 20px;
+    }
+
+    .list-no {
+        width: 0px;
+        height: 0px;
+        font-size: 0.1px;
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+    }
+
+    label a {
+        position: absolute;
+    }
 
 
-.link{padding-bottom: 50px;}/* ホバーした時の位置調整*/
+    .link {
+        padding-bottom: 50px;
+    }
 
-ul {list-style: none;}
+    /* ホバーした時の位置調整*/
+
+    ul {
+        list-style: none;
+    }
 
 
-.drop-down_list{
-    opacity: 0;
-    width: 0;
-    height: 0px;
-    border-bottom: none;
-    background-color: rgb(92, 92, 92);
-    position: relative;
-    top: 50px;
-    bottom: -3px;
-    z-index: 120;
-    -webkit-transition: 0.2s;
-    -moz-transition: 0.2s;
-    -o-transition: 0.2s;
-    -ms-transition: 0.2s;
-    transition: 0.2s;
+    .drop-down_list {
+        opacity: 0;
+        width: 0;
+        height: 0px;
+        border-bottom: none;
+        background-color: rgb(92, 92, 92);
+        position: relative;
+        top: 50px;
+        bottom: -3px;
+        z-index: 120;
+        -webkit-transition: 0.2s;
+        -moz-transition: 0.2s;
+        -o-transition: 0.2s;
+        -ms-transition: 0.2s;
+        transition: 0.2s;
     }
 
 
     /*.nakami .jyuusyo:nth-of-type(2)*/
-.list:hover{color: #00ff08;
-    z-index: 5000;}
+    .list:hover {
+        color: #00ff08;
+        z-index: 5000;
+    }
 
-.list:hover .drop-down_list{
-    position: relative;
-    border-bottom: 0.5px solid #ffffff;
-    padding-top: 30px;
-    padding-left: 10px;;
-    left:-100px;
-    top:50px;
+    .list:hover .drop-down_list {
+        position: relative;
+        border-bottom: 0.5px solid #ffffff;
+        padding-top: 30px;
+        padding-left: 10px;
+        left: -100px;
+        top: 50px;
         height: 30px;
         opacity: 1;
         width: 300px;
         list-style: none;
         z-index: 5000;
-        transition : all 0.4s;}
-        .links .list:nth-of-type(3):hover .drop-down_list {
-            position: relative;
-            left:-120px;
-            top:50px;
-            height: 30px;
-            opacity: 1;
-            width: 300px;
-            list-style: none;
-            white-space: nowrap;
-            z-index: 5000;
-            transition : all 0.4s;}         
-.links .list:nth-of-type(5):hover .drop-down_list {
-    position: relative;
-    left:-180px;
-    opacity: 1;
-    top:50px;
-    height: 30px;
-    width: 280px;
-    list-style: none;
-    white-space: nowrap;
-    z-index: 5000;
-    transition : all 0.4s;}      
-.drop-down_list a {text-decoration: none;
-                    color: #ffffff;
-                    position: relative;
-                    list-style: none;}
+        transition: all 0.4s;
+    }
+
+    .links .list:nth-of-type(3):hover .drop-down_list {
+        position: relative;
+        left: -120px;
+        top: 50px;
+        height: 30px;
+        opacity: 1;
+        width: 300px;
+        list-style: none;
+        white-space: nowrap;
+        z-index: 5000;
+        transition: all 0.4s;
+    }
+
+    .links .list:nth-of-type(5):hover .drop-down_list {
+        position: relative;
+        left: -180px;
+        opacity: 1;
+        top: 50px;
+        height: 30px;
+        width: 280px;
+        list-style: none;
+        white-space: nowrap;
+        z-index: 5000;
+        transition: all 0.4s;
+    }
+
+    .drop-down_list a {
+        text-decoration: none;
+        color: #ffffff;
+        position: relative;
+        list-style: none;
+    }
 
 
-.drop-down_list:hover{
-background-color: rgb(0, 0, 135);
-transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 10.0s;}
-.drop-down_list a {position: absolute;
-width: 300px;}}
+    .drop-down_list:hover {
+        background-color: rgb(0, 0, 135);
+        transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 10.0s;
+    }
+
+    .drop-down_list a {
+        position: absolute;
+        width: 300px;
+    }
+}
 
 
 
 
 @media screen and (max-width: 1030px) {
-        /* 1030px以下に適用されるCSS（スマホ用） */
-        
-.menu{width: 500px;} /* 大本の親要素のサイズ*/
-/*[三]のメニューバー*/
-.menu-button{
-display: flex;/* メニューバーの形を保つのに大切*/
-width: 30px;
-height:auto;
-aspect-ratio: 1/ 1;
-background-color: rgb(0, 0, 0);
-outline: 3px solid #fefefef2;
-outline-offset: -2px;
-justify-content: center;
-align-items: center;
-z-index: 105;
-top:2%;
-}
-.menu-button span,
-.menu-button span:before,
-.menu-button span:after {
-content: '';
-display: block;
-width: 20px;
-height:auto;
-aspect-ratio: 9/ 1;
-background-color: #f8f8f8;
-position: relative;
-top: 0%;}
-.menu-button span:before {
-position:absolute;    
-top: 350%;
-transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
-}
+    /* 1030px以下に適用されるCSS（スマホ用） */
 
-.menu-button span:after {
-    position:absolute; 
-top:-350%;
-transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
-}
+    .menu {
+        width: 500px;
+    }
 
-#menu-checkbox:checked ~ .menu-button span {
+    /* 大本の親要素のサイズ*/
+    /*[三]のメニューバー*/
+    .menu-button {
+        display: flex;
+        /* メニューバーの形を保つのに大切*/
+        width: 30px;
+        height: auto;
+        aspect-ratio: 1/ 1;
+        background-color: rgb(0, 0, 0);
+        outline: 3px solid #fefefef2;
+        outline-offset: -2px;
+        justify-content: center;
+        align-items: center;
+        z-index: 105;
+        top: 2%;
+    }
 
-background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+    .menu-button span,
+    .menu-button span:before,
+    .menu-button span:after {
+        content: '';
+        display: block;
+        width: 20px;
+        height: auto;
+        aspect-ratio: 9/ 1;
+        background-color: #f8f8f8;
+        position: relative;
+        top: 0%;
+    }
 
-}
-#menu-checkbox:checked ~ .menu-button span::before {
-top:10%;
-bottom: 0;
-transform: rotate(45deg);
-transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
-z-index: 10;
-}
-#menu-checkbox:checked ~ .menu-button span::after {
-top: 10%;
-transform: rotate(-45deg);
-transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
-z-index: 10;
-}
+    .menu-button span:before {
+        position: absolute;
+        top: 350%;
+        transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
+    }
 
+    .menu-button span:after {
+        position: absolute;
+        top: -350%;
+        transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
+    }
 
-.links{display:grid;/* inline or  flex;横　grid 縦*/
-position: absolute;
-margin-left: -14%;
-top: 150px;
-left: 1px;
-width: 500px;
-color: rgb(255, 255, 255);
-list-style: none;
-transition: all .2s;
+    #menu-checkbox:checked~.menu-button span {
 
-
-
-}
-.menu-bar-img{
-background-color: rgb(0, 0, 0);
-position: absolute;
-top: 100px;
-left: 0px;
-width: 150px;
-height:50px;
-content: url("select\ menu.png");}
-
-.menu-bar-sns-sing-credit{position: absolute;
-top:90vh;
-width: 250px;
-height: 100px;}
-.menu-bar-sns-sing{content: url("小沢創のサイン白.png");
-                    position: absolute;
-                    left: 45%;
-                width: 40px;
-                height:40px;
-                font-size: 10px;
-                color: #f8f8f8;}
-                .menu-bar-credit{position: absolute;
-                    top: 50px;
-                    height:40px;
-                    left: 25%;
-                    font-size: 10px;
-                    color: #f8f8f8;}
-
-
-
-.menu-bar-background{background-color: rgb(0, 0, 0);
-position: absolute;
-top:-70px;
-z-index: -2;
-width: 0px;
-height: 150vh;
-outline-offset : -50px;
-transition : all 0.3s; }
-
-
-.menu-bar-background::before{
-    z-index: 20;
-    content: '';
-    position: absolute;
-    top:135px;
-    height: 1px;
-    width: 300px;
-    background-color: #ffffff;
-    position: absolute;}
-
-
-
-#menu-checkbox:checked ~.menu-bar-background{
-background-color: rgb(0, 0, 0);
-position: absolute;
-outline: 3px solid #ffffff;
-border-left: 5px  double #f8f8f8;
-z-index: 100;
-width: 300px;
-height: 150vh;
-outline: 3px solid #ff0000;
-outline-offset : -50px; 
-transition : all 0.3s;}
-
-
-.hamburger input{display:none ;}
-
-
-
-
-
-
-
-.list{width: 300px;
-z-index: 100;
-background-color:rgb(0, 0, 0);
-border: 1px solid #fffffff2;
-border-left: 1px  solid #ffffff00;} 
-.list-no{width: 0px;
-    height: 0px;
-    z-index: 100;
-    color: #00000000;} 
-label  a {position: absolute;
-    width: 300px;}
-
-
-
-.list span::before {
-margin-left:5px ;
-margin-right:10px ;
-display: inline-block;
-content:"▲";
-transform: rotate(0deg);
-transform-origin: center; 
-transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;}
-
-
-
-.link{padding: 1px;}
-
-ul {list-style: none;}
-
-
-.drop-down_list {opacity: 0;
-height: 0px;
-z-index: 20;
-transition : all .3s;}
-
-#menu-radio-button1:checked ~ label span::before, 
-#menu-radio-button2:checked ~ label span::before, 
-#menu-radio-button3:checked ~ label span::before, 
-#menu-radio-button4:checked ~ label span::before, 
-#menu-radio-button5:checked ~ label span::before 
-{  
-    display: inline-block;
-    content:"▲";
-    color: #ffffff;
-    transform: rotateX(180deg);
-    transform-origin: center;}
-  
-
-
-#menu-radio-button1:checked ~.link .drop-down_list, 
-#menu-radio-button2:checked ~.link .drop-down_list,
-#menu-radio-button3:checked ~.link .drop-down_list,
-#menu-radio-button4:checked ~.link .drop-down_list,
-#menu-radio-button5:checked ~.link .drop-down_list{
-    opacity: 1;
-    border-top: 1px solid #ffffff;
-    width: 300px;
-    height: 20px;
-    z-index: 20;
-    padding-left: 10px;
-    transition : all .3s;
-    text-decoration: none;}
-    .drop-down_list a {text-decoration: none;
-    color: #f8f8f8;
+        background-color: rgba(255, 255, 255, 0);
+        /*メニューオープン時は真ん中の線を透明にする*/
 
     }
 
-.karano-list{opacity: 0;/* 空のリスト。空間が出来る*/
-width: 100px;
-height: 0px;
-z-index: 0;
-list-style: none;}
+    #menu-checkbox:checked~.menu-button span::before {
+        top: 10%;
+        bottom: 0;
+        transform: rotate(45deg);
+        transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
+        z-index: 10;
+    }
 
-.list:hover .karano-list{opacity: 1;
-    width: 100px;
-    height: 0px;
-    z-index: 0;
-    list-style: none;}
+    #menu-checkbox:checked~.menu-button span::after {
+        top: 10%;
+        transform: rotate(-45deg);
+        transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
+        z-index: 10;
+    }
+
+
+    .links {
+        display: grid;
+        /* inline or  flex;横　grid 縦*/
+        position: absolute;
+        margin-left: -14%;
+        top: 150px;
+        left: 1px;
+        width: 500px;
+        color: rgb(255, 255, 255);
+        list-style: none;
+        transition: all .2s;
 
 
 
-.drop-down_list{
-width: 200px;
-border-bottom: none;
-background-color: rgb(81, 81, 81);
-bottom: -3px;
-padding-left: 10px;
--webkit-transition: 0.2s;
--moz-transition: 0.2s;
--o-transition: 0.2s;
--ms-transition: 0.2s;
-transition: 0.2s;
+    }
+
+    .menu-bar-img {
+        background-color: rgb(0, 0, 0);
+        position: absolute;
+        top: 100px;
+        left: 0px;
+        width: 150px;
+        height: 50px;
+        content: url("imgs/menu.png");
+    }
+
+    .menu-bar-sns-sing-credit {
+        position: absolute;
+        top: 90vh;
+        width: 250px;
+        height: 100px;
+    }
+
+    .menu-bar-sns-sing {
+        content: url("imgs/小沢創のサイン白.png");
+        position: absolute;
+        left: 45%;
+        width: 40px;
+        height: 40px;
+        font-size: 10px;
+        color: #f8f8f8;
+    }
+
+    .menu-bar-credit {
+        position: absolute;
+        top: 50px;
+        height: 40px;
+        left: 25%;
+        font-size: 10px;
+        color: #f8f8f8;
+    }
+
+
+
+    .menu-bar-background {
+        background-color: rgb(0, 0, 0);
+        position: absolute;
+        top: -70px;
+        z-index: -2;
+        width: 0px;
+        height: 150vh;
+        outline-offset: -50px;
+        transition: all 0.3s;
+    }
+
+
+    .menu-bar-background::before {
+        z-index: 20;
+        content: '';
+        position: absolute;
+        top: 135px;
+        height: 1px;
+        width: 300px;
+        background-color: #ffffff;
+        position: absolute;
+    }
+
+
+
+    #menu-checkbox:checked~.menu-bar-background {
+        background-color: rgb(0, 0, 0);
+        position: absolute;
+        outline: 3px solid #ffffff;
+        border-left: 5px double #f8f8f8;
+        z-index: 100;
+        width: 300px;
+        height: 150vh;
+        outline: 3px solid #ff0000;
+        outline-offset: -50px;
+        transition: all 0.3s;
+    }
+
+
+    .hamburger input {
+        display: none;
+    }
+
+
+
+
+
+
+
+    .list {
+        width: 300px;
+        z-index: 100;
+        background-color: rgb(0, 0, 0);
+        border: 1px solid #fffffff2;
+        border-left: 1px solid #ffffff00;
+    }
+
+    .list-no {
+        width: 0px;
+        height: 0px;
+        z-index: 100;
+        color: #00000000;
+    }
+
+    label a {
+        position: absolute;
+        width: 300px;
+    }
+
+
+
+    .list span::before {
+        margin-left: 5px;
+        margin-right: 10px;
+        display: inline-block;
+        content: "▲";
+        transform: rotate(0deg);
+        transform-origin: center;
+        transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
+    }
+
+
+
+    .link {
+        padding: 1px;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+
+    .drop-down_list {
+        opacity: 0;
+        height: 0px;
+        z-index: 20;
+        transition: all .3s;
+    }
+
+    #menu-radio-button1:checked~label span::before,
+    #menu-radio-button2:checked~label span::before,
+    #menu-radio-button3:checked~label span::before,
+    #menu-radio-button4:checked~label span::before,
+    #menu-radio-button5:checked~label span::before {
+        display: inline-block;
+        content: "▲";
+        color: #ffffff;
+        transform: rotateX(180deg);
+        transform-origin: center;
+    }
+
+
+
+    #menu-radio-button1:checked~.link .drop-down_list,
+    #menu-radio-button2:checked~.link .drop-down_list,
+    #menu-radio-button3:checked~.link .drop-down_list,
+    #menu-radio-button4:checked~.link .drop-down_list,
+    #menu-radio-button5:checked~.link .drop-down_list {
+        opacity: 1;
+        border-top: 1px solid #ffffff;
+        width: 300px;
+        height: 20px;
+        z-index: 20;
+        padding-left: 10px;
+        transition: all .3s;
+        text-decoration: none;
+    }
+
+    .drop-down_list a {
+        text-decoration: none;
+        color: #f8f8f8;
+
+    }
+
+    .karano-list {
+        opacity: 0;
+        /* 空のリスト。空間が出来る*/
+        width: 100px;
+        height: 0px;
+        z-index: 0;
+        list-style: none;
+    }
+
+    .list:hover .karano-list {
+        opacity: 1;
+        width: 100px;
+        height: 0px;
+        z-index: 0;
+        list-style: none;
+    }
+
+
+
+    .drop-down_list {
+        width: 200px;
+        border-bottom: none;
+        background-color: rgb(81, 81, 81);
+        bottom: -3px;
+        padding-left: 10px;
+        -webkit-transition: 0.2s;
+        -moz-transition: 0.2s;
+        -o-transition: 0.2s;
+        -ms-transition: 0.2s;
+        transition: 0.2s;
+    }
+
+
+    .drop-down_list:hover {
+        background-color: rgb(0, 0, 135);
+        transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 10.0s;
+    }
+
+    .drop-down_list a {
+        position: absolute;
+        width: 300px;
+    }
 }
 
-
-.drop-down_list:hover{
-background-color: rgb(0, 0, 135);
-transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 10.0s;}
-.drop-down_list a {position: absolute;
-width: 300px;}     }  /* PC用*/
+/* PC用*/
 
 /* 左のロゴ等*/
 
-.lightobi{position: absolute;
+.lightobi {
+    position: absolute;
     width: 100px;
     top: 10px;
-    transition : all .3s;}    
-    .lightobi.active{position: relative;
-        transition : all .3s;
-        top: 0px;}    
+    transition: all .3s;
+}
+
+.lightobi.active {
+    position: relative;
+    transition: all .3s;
+    top: 0px;
+}
 
 
-    .sakusya{position: absolute;
-            z-index: 98;
-            left: 30px;
-            top: 10px;
-            width: 50px;
-            height: 50px;}  
-
- 
-
-
-    .WEBDESING{position: relative;
-        color: #ffffff;
-        font-size: 30px;
-        width: 400px;
-        height: 60px;
-        margin: 0px;
-        padding: 0px;
-        z-index: 98;
-        top: 20px;
-        left: 150px;
-        transition : all .3s;}  
-
-    .WEBDESING.active{top: 10px;
-        transition : all .3s;}  
-
-            
-    
+.sakusya {
+    position: absolute;
+    z-index: 98;
+    left: 30px;
+    top: 10px;
+    width: 50px;
+    height: 50px;
+}
 
 
-    @media screen and (max-width: 600px) {
-        /* 600px以下に適用されるCSS（タブレット用）,狭めたら"WEBDESINGが消える" */
 
-        .WEBDESING{opacity: 0;} }
-           
-                
-             
+
+.WEBDESING {
+    position: relative;
+    color: #ffffff;
+    font-size: 30px;
+    width: 400px;
+    height: 60px;
+    margin: 0px;
+    padding: 0px;
+    z-index: 98;
+    top: 20px;
+    left: 150px;
+    transition: all .3s;
+}
+
+.WEBDESING.active {
+    top: 10px;
+    transition: all .3s;
+}
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    /* 600px以下に適用されるCSS（タブレット用）,狭めたら"WEBDESINGが消える" */
+
+    .WEBDESING {
+        opacity: 0;
+    }
+}
+
+
+
 
 
 
 /* 上フッター*/
 
 /* 背景,すすきのニッカウイスキー*/
-.haikei{background-repeat: no-repeat;   
-    position: fixed; /* 画像をスクロールに追随しないようにする */
+.haikei {
+    background-repeat: no-repeat;
+    position: fixed;
+    /* 画像をスクロールに追随しないようにする */
     width: 100%;
     height: 100%;
-    z-index: 1;}
+    z-index: 1;
+}
 
 
 
- /* コンテンツ基幹部 */
+/* コンテンツ基幹部 */
 
- /* 背景１（バックグラウンド */
+/* 背景１（バックグラウンド */
 
 
-  /* 背景２（黒色の） */
-.haikei2{background-color: rgb(44, 43, 43);
+/* 背景２（黒色の） */
+.haikei2 {
+    background-color: rgb(44, 43, 43);
     border: solid 3px #fffffffc;
     position: relative;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin: auto;
+    width: 900px;
+    padding-bottom: 400px;
+    z-index: 2;
+}
+
+
+@media screen and (max-width: 1030px) {
+    .haikei2 {
+        background-color: rgb(44, 43, 43);
+        position: relative;
         align-items: center;
         justify-content: center;
         vertical-align: middle;
         margin: auto;
-    width: 900px;
-    padding-bottom: 400px;
-    z-index: 2;}
+        width: 90vw;
+        z-index: 2;
+    }
+}
 
-
-    @media screen and (max-width: 1030px){
-    .haikei2{background-color: rgb(44, 43, 43);
+/* padding-bottomで長さを調整 */
+@media screen and (max-width: 767px) {
+    .haikei2 {
+        background-color: rgb(44, 43, 43);
         position: relative;
-            align-items: center;
-            justify-content: center;
-            vertical-align: middle;
-            margin: auto;
-            width: 90vw;
-            z-index: 2;}}
-            /* padding-bottomで長さを調整 */
-            @media screen and (max-width: 767px){
-                .haikei2{background-color: rgb(44, 43, 43);
-                    position: relative;
-                        align-items: center;
-                        justify-content: center;
-                        vertical-align: middle;
-                        margin: auto;
-                        padding-bottom: 400px;
-                        width: 90vw;
-                        z-index: 2;}}
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+        margin: auto;
+        padding-bottom: 400px;
+        width: 90vw;
+        z-index: 2;
+    }
+}
 
 
 
-
-
-
-/*aspect-ratioが正解。xに対してy＝a aは一次関数:*/
-
-
-
-
-    
 /* ここよりメインコンテンツ*/
 
-.gourmet{/* recomend grumet*/
+.gourmet {
+    /* recomend grumet*/
     position: relative;
     align-items: center;
     justify-content: center;
@@ -559,22 +694,27 @@ width: 300px;}     }  /* PC用*/
     font-size: 300%;
     z-index: 3;
     color: #ffffff;
-    font-weight:bold;
-font-family: Times, 'Times New Roman', serif;
-border-bottom-style: solid;
-border-bottom-color: rgb(255, 0, 0);
-border-bottom-width:3px;
--webkit-text-stroke-width: 0.8px;
--webkit-text-stroke-color: rgb(0, 0, 0);
--webkit-border-bottom-stroke-width: 1px;
--webkit-border-top-stroke-color: rgb(255, 255, 255);
-}
-@media screen and (max-width: 767px){.gourmet{font-size: 10vw;
-    border-bottom-width:1vw;
-    -webkit-text-stroke-width: 0.3vw;
+    font-weight: bold;
+    font-family: Times, 'Times New Roman', serif;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(255, 0, 0);
+    border-bottom-width: 3px;
+    -webkit-text-stroke-width: 0.8px;
     -webkit-text-stroke-color: rgb(0, 0, 0);
-    -webkit-border-bottom-stroke-width: 0.5vw;
-    -webkit-border-top-stroke-color: rgb(255, 255, 255);}}
+    -webkit-border-bottom-stroke-width: 1px;
+    -webkit-border-top-stroke-color: rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 767px) {
+    .gourmet {
+        font-size: 10vw;
+        border-bottom-width: 1vw;
+        -webkit-text-stroke-width: 0.3vw;
+        -webkit-text-stroke-color: rgb(0, 0, 0);
+        -webkit-border-bottom-stroke-width: 0.5vw;
+        -webkit-border-top-stroke-color: rgb(255, 255, 255);
+    }
+}
 
 
 
@@ -584,85 +724,129 @@ border-bottom-width:3px;
 
 
 
-    /* １、ラーメンマップ*/
-              /* 写真のサイズ、位置を変えるのなら”iti”をいじるべし*/
-         .iti{
-            position: relative;
-            align-items: center;
-            justify-content: center;
-            vertical-align: middle;
-            margin: auto;
-            max-width: 100%;
-            max-height: 100%;
-            width: 450px;
-            height: 450px;
-            display: flex;
-            top: 100px;}
+/* １、ラーメンマップ*/
+/* 写真のサイズ、位置を変えるのなら”iti”をいじるべし*/
+.iti {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    width: 450px;
+    height: 450px;
+    display: flex;
+    top: 100px;
+}
 
 
 
-            @media screen and (max-width: 767px) 
-            {.iti{width: 70vw;
-                height: auto;
-                margin:0 auto;   /* 写真が中央に来る*/
-                aspect-ratio: 1 / 1;
-        }}
+@media screen and (max-width: 767px) {
+    .iti {
+        width: 70vw;
+        height: auto;
+        margin: 0 auto;
+        /* 写真が中央に来る*/
+        aspect-ratio: 1 / 1;
+    }
+}
 
-                 /* 北海道の写真*/
-         .tizu {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left:0px;
-            top: 0px;
-            padding-bottom:10% ;
-            z-index: 3;}    
-        /* 各都市のポイント */
-     
-/* @@@@@@@@@@ホバー時黄色くなる@@@@@@@@@@*/ 
-.B1:hover,.B2:hover, .B3:hover, .B4:hover, .B5:hover, .B6:hover {color: rgb(255, 0, 0);}
-@media screen and (max-width: 767px) 
-{.B1:hover,.B2:hover, .B3:hover, .B4:hover, .B5:hover, .B6:hover
-{ 
-    pointer-events:none;}}
-                        
-    .B1 ,.B2, .B3, .B4, .B5, .B6 {
+/* 北海道の写真*/
+.tizu {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    padding-bottom: 10%;
+    z-index: 3;
+}
+
+/* 各都市のポイント */
+
+/* @@@@@@@@@@ホバー時黄色くなる@@@@@@@@@@*/
+.B1:hover, .B2:hover, .B3:hover, .B4:hover, .B5:hover, .B6:hover {
+    color: rgb(255, 0, 0);
+}
+
+@media screen and (max-width: 767px) {
+    .B1:hover, .B2:hover, .B3:hover, .B4:hover, .B5:hover, .B6:hover {
+        pointer-events: none;
+    }
+}
+
+.B1, .B2, .B3, .B4, .B5, .B6 {
     text-decoration: none;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: rgba(0, 0, 0, 0);
     color: #FFFF00;
     font-size: 25px;
     position: absolute;
-    z-index: 4;}
-    @media screen and (max-width: 767px) 
-    {.B1,.B2, .B3, .B4, .B5, .B6 {font-size: 4vw;
-        pointer-events:none;
-}}
+    z-index: 4;
+}
+
+@media screen and (max-width: 767px) {
+    .B1, .B2, .B3, .B4, .B5, .B6 {
+        font-size: 4vw;
+        pointer-events: none;
+    }
+}
 
 
 
 
-.B1 { top: 62%; left: 18%; }
-.B2 { top: 65%; left: 20%; }
-.B3 { top: 88%; left: 15% }
-.B4 { top: 53%; left: 66%; }
-.B5 { top: 44%; left: 31%; }
-.B6 { top: 37%; left: 52%; }
+.B1 {
+    top: 62%;
+    left: 18%;
+}
+
+.B2 {
+    top: 65%;
+    left: 20%;
+}
+
+.B3 {
+    top: 88%;
+    left: 15%
+}
+
+.B4 {
+    top: 53%;
+    left: 66%;
+}
+
+.B5 {
+    top: 44%;
+    left: 31%;
+}
+
+.B6 {
+    top: 37%;
+    left: 52%;
+}
 
 
 
 
 
-@media screen and (max-width: 767px) 
-{    .B1 { top: 60%; left: 15%; }
-     .B2 { top: 66%; left: 20%; }
+@media screen and (max-width: 767px) {
+    .B1 {
+        top: 60%;
+        left: 15%;
     }
 
+    .B2 {
+        top: 66%;
+        left: 20%;
+    }
+}
 
-.B1:hover + .C1, .B2:hover + .C2, .B3:hover + .C3, .B4:hover + .C4, 
-.B5:hover + .C5, .B6:hover + .C6{
+
+.B1:hover+.C1, .B2:hover+.C2, .B3:hover+.C3, .B4:hover+.C4,
+.B5:hover+.C5, .B6:hover+.C6 {
     opacity: 1;
-    border:1px solid #00FF00;
+    border: 1px solid #00FF00;
     color: rgb(255, 255, 255);
     writing-mode: horizontal-tb;
     background-color: #000000;
@@ -673,88 +857,118 @@ border-bottom-width:3px;
     text-align: center;
     transform: scaleY(1);
     white-space: nowrap;
-    font-size: 20PX;}
-
-  
-
+    font-size: 20PX;
+}
 
 
 
-    .C1,.C2, .C3, .C4, .C5, .C6 {
+
+
+
+.C1, .C2, .C3, .C4, .C5, .C6 {
     z-index: 200;
-    border:1px solid #ffffff;
+    border: 1px solid #ffffff;
     text-decoration: none;
     background-color: #000000;
     opacity: 0;
     width: 15%;
     font-size: 20px;
     position: absolute;
-    top:10%;
+    top: 10%;
     left: 45%;
     color: rgb(0, 0, 0);
     writing-mode: horizontal-tb;
     transform: scaleY(0);
-    transition: all .2s;}
+    transition: all .2s;
+}
 
-    @media screen and (max-width: 767px) 
-{.C1,.C2, .C3, .C4, .C5, .C6 {
-    text-align: center;
-    opacity: 1;
-    transform: scaleY(1);
-    width: 15%;
-    font-size: 20px;
+@media screen and (max-width: 767px) {
+    .C1, .C2, .C3, .C4, .C5, .C6 {
+        text-align: center;
+        opacity: 1;
+        transform: scaleY(1);
+        width: 15%;
+        font-size: 20px;
+        position: absolute;
+        top: 10%;
+        left: 45%;
+        text-decoration: none;
+        font-size: 3.5vw;
+        padding: 0.5vw;
+        color: rgb(255, 255, 255);
+        writing-mode: horizontal-tb;
+    }
+
+    .C1 {
+        top: 52%;
+        left: 0%;
+    }
+
+    .C2 {
+        top: 60%;
+        left: 25%;
+    }
+
+    .C3 {
+        top: 90%;
+        left: -5%
+    }
+
+    .C4 {
+        top: 50%;
+        left: 75%;
+    }
+
+    .C5 {
+        top: 35%;
+        left: 25%;
+    }
+
+    .C6 {
+        top: 28%;
+        left: 52%;
+    }
+}
+
+
+
+.choose-city {
     position: absolute;
-    top:10%;
-    left: 45%;
-    text-decoration: none;
-    font-size: 3.5vw;
-    padding: 0.5vw;
-    color: rgb(255, 255, 255);
-    writing-mode: horizontal-tb;}
+    height: 50px;
+    top: 100%;
+    border-bottom: 0.3vw solid #00FF00;
 
-    .C1 { top: 52%; left: 0%; }
-    .C2 { top: 60%; left: 25%; }
-    .C3 { top: 90%; left: -5% }
-    .C4 { top: 50%; left: 75%; }
-    .C5 { top: 35%; left: 25%; }
-    .C6 { top: 28%; left: 52%; }
-    }
+}
 
 
-
-    .choose-city{position: absolute;
-                height: 50px;
-                top: 100%;  
-                border-bottom: 0.3vw solid #00FF00;
-
-    }
-
- 
-    @media screen and (max-width: 767px) 
-    {.choose-city{width: 80vw;
+@media screen and (max-width: 767px) {
+    .choose-city {
+        width: 80vw;
         height: auto;
-        margin:0 auto;   /* 写真が中央に来る*/
+        margin: 0 auto;
+        /* 写真が中央に来る*/
         aspect-ratio: 4 / 1;
-}}
-               
+    }
+}
 
 
 
-                
-/* @@@@@@@@@@2, お店の解説@@@@@@@@@@*/ 
-.mise-background{
+
+
+/* @@@@@@@@@@2, お店の解説@@@@@@@@@@*/
+.mise-background {
     position: relative;
-        justify-content: center;
-        vertical-align: middle;
-        margin: auto;
-        padding-left: auto;
-        padding-right: auto;
+    justify-content: center;
+    vertical-align: middle;
+    margin: auto;
+    padding-left: auto;
+    padding-right: auto;
     width: 100%;
     background-color: #808080;
     border: solid 1px #00000000;
     border-style: solid;
     border-color: rgb(0, 0, 0);
-    border-width:3px;
+    border-width: 3px;
     font-family: "ヒラギノ明朝 ProN", "MS 明朝", serif;
 }
 
@@ -762,117 +976,154 @@ border-bottom-width:3px;
 
 
 
-.omise{position: relative;
+.omise {
+    position: relative;
     justify-content: center;
     margin: auto;
     padding-left: auto;
     padding-right: auto;
-width: 90%;
-top: 300px;}  /* 説明文の位置調整*/ 
+    width: 90%;
+    top: 300px;
+}
 
-   /* 都市名(●●市)*/ 
-.title{background-color: rgb(148, 249, 131);
+/* 説明文の位置調整*/
+
+/* 都市名(●●市)*/
+.title {
+    background-color: rgb(148, 249, 131);
     font-size: 18px;
     width: 98%;
-    margin-left:1% ;
-    margin-right:1% ;
-    z-index: 20;}
-    @media screen and (max-width: 767px)
-     {.title{font-size: 2.5vw;}}
+    margin-left: 1%;
+    margin-right: 1%;
+    z-index: 20;
+}
+
+@media screen and (max-width: 767px) {
+    .title {
+        font-size: 2.5vw;
+    }
+}
 
 
 
 
 
 
-   /* お店の名前*/ 
-.mise{background-color: #ffffff;
+/* お店の名前*/
+.mise {
+    background-color: #ffffff;
     width: 98%;
-    margin-left:1% ;
-    margin-right:1% ;
+    margin-left: 1%;
+    margin-right: 1%;
     font-size: 18px;
     border-bottom-style: solid;
     border-bottom-color: red;
-    border-bottom-width:5px;
-    padding-bottom:0 ;
+    border-bottom-width: 5px;
+    padding-bottom: 0;
     margin-bottom: 0;
-    z-index: 20;}
-    @media screen and (max-width: 767px)
-    {.mise{font-size: 2.5vw;}}
+    z-index: 20;
+}
+
+@media screen and (max-width: 767px) {
+    .mise {
+        font-size: 2.5vw;
+    }
+}
 
 
 
- 
-    
-/* お店の住所と写真*/ 
 
-    .address{display:flex;/*写真と住所が横か縦か*/
+
+/* お店の住所と写真*/
+
+.address {
+    display: flex;
+    /*写真と住所が横か縦か*/
+    position: relative;
+    justify-content: center;
+    vertical-align: middle;
+    margin: auto;
+    padding-left: auto;
+    padding-right: auto;
+    width: 90%;
+    padding-top: 3%;
+    left: 0%;
+}
+
+
+
+
+
+
+@media screen and (768px <=width <=1030px) {
+    .address {
+        display: grid;
         position: relative;
+        text-align: center;
+        justify-content: center;
+        vertical-align: middle;
+        left: 0%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .address {
+        display: grid;
+        position: relative;
+        text-align: center;
+        justify-content: center;
+        vertical-align: middle;
+        left: 0%;
+    }
+}
+
+
+
+
+.address ul {
+    position: relative;
+    padding-left: 3%;
+    width: 70%;
+    top: -20px
+}
+
+@media screen and (768px <=width <=1030px) {
+    .address ul {
+        position: relative;
+        align-items: center;
         justify-content: center;
         vertical-align: middle;
         margin: auto;
-        padding-left: auto;
-        padding-right: auto;
-    width: 90%;
-    padding-top:3% ;
-    left: 0%;
+        max-width: 100%;
+        max-height: 100%;
+        top: -9%;
+        margin-top: 5%;
+        margin-bottom: 0%
     }
 
+    .hourin .address:nth-child(1) ul {
+        margin-bottom: 3%;
+        margin-top: 8%;
+    }
+}
 
+@media screen and (max-width: 767px) {
+    .address ul {
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+        margin: auto;
+        top: -9%;
+        margin-top: 10%;
+        margin-bottom: 0%
+    }
 
-
-
-
-@media screen and (768px <= width <= 1030px)
-            {.address{display: grid;
-                position: relative;
-                text-align: center;
-                    justify-content: center;
-                    vertical-align: middle;
-                    left: 0%;}}
-                    @media screen and (max-width: 767px)
-                     {.address{display: grid;
-                        position: relative;
-                        text-align: center;
-                            justify-content: center;
-                            vertical-align: middle;
-                            left: 0%;}}
-
-
-
-
-        .address ul{position: relative;
-                    padding-left: 3%;
-                    width: 70%;
-                top:-20px}
-              
-                    @media screen and (768px <= width <= 1030px)
-                    { .address ul{
-                        position: relative;
-                        align-items: center;
-                        justify-content: center;
-                        vertical-align: middle;
-                        margin: auto;
-                        max-width: 100%;
-                        max-height: 100%;
-                        top:-9%;
-                    margin-top: 5%;
-                    margin-bottom: 0%}
-                .hourin .address:nth-child(1) ul{margin-bottom: 3%;
-                    margin-top: 8%;}}
-
-                    @media screen and (max-width: 767px)
-                    { .address ul{
-                        position: relative;
-                        align-items: center;
-                        justify-content: center;
-                        vertical-align: middle;
-                        margin: auto;
-                        top:-9%;
-                    margin-top: 10%;
-                    margin-bottom: 0%}
-                .hourin .address:nth-child(1) ul{margin-bottom: 3%;
-                    margin-top: 8%;}}
+    .hourin .address:nth-child(1) ul {
+        margin-bottom: 3%;
+        margin-top: 8%;
+    }
+}
 
 
 
@@ -880,142 +1131,192 @@ top: 300px;}  /* 説明文の位置調整*/
 
 
 
-    
-
-    .address li {color: #ffffff;
-                list-style: none;
-                position: relative;
-                padding-bottom: 1%;
-                padding-top: 2%;
-                z-index: 100;
-                font-size: 14px;}
-                @media screen and (768px <= width <= 1030px)
-                { .address li{
-                    padding-bottom: 0%;
-                    padding-top: 0%;}}
-                    @media screen and (max-width: 767px) 
-                    {.address li {color: #ffffff;
-                        padding-bottom: 0.3vw;
-                        padding-top: 0.3vw;
-                        font-size: 2vw;}}
-            .address a {color: #ffffff;
-                z-index: 101;
-                position: relative;
-                width: 10%;
-                font-size: 16px;
-                padding-left: 0%;
-                text-align: left;}
-                .address a::before{
-                content:"" ;
-                    padding-left: 3%;
-                    position: relative;}
-                    @media screen and (768px <= width <= 1030px)
-                    { .address a::before{padding-left: 0%;}}
-
-                    @media screen and (max-width: 767px) 
-                    {.address a {color: #ffffff;
-                        font-size: 2vw;}}
-    
 
 
+.address li {
+    color: #ffffff;
+    list-style: none;
+    position: relative;
+    padding-bottom: 1%;
+    padding-top: 2%;
+    z-index: 100;
+    font-size: 14px;
+}
+
+@media screen and (768px <=width <=1030px) {
+    .address li {
+        padding-bottom: 0%;
+        padding-top: 0%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .address li {
+        color: #ffffff;
+        padding-bottom: 0.3vw;
+        padding-top: 0.3vw;
+        font-size: 2vw;
+    }
+}
+
+.address a {
+    color: #ffffff;
+    z-index: 101;
+    position: relative;
+    width: 10%;
+    font-size: 16px;
+    padding-left: 0%;
+    text-align: left;
+}
+
+.address a::before {
+    content: "";
+    padding-left: 3%;
+    position: relative;
+}
+
+@media screen and (768px <=width <=1030px) {
+    .address a::before {
+        padding-left: 0%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .address a {
+        color: #ffffff;
+        font-size: 2vw;
+    }
+}
 
 
 
-.omise .address:nth-of-type() a {color: #ff0000;}
-
-      .kaigyou{display: none;}
 
 
-      
-   /* 住所に下線を引く*/ 
-    .address li:after{
-        content: '';
-display: block;
-height: 2px;
-width: 70%;
-background-color: #f8f8f8;
+
+.omise .address:nth-of-type() a {
+    color: #ff0000;
+}
+
+.kaigyou {
+    display: none;
+}
+
+
+
+/* 住所に下線を引く*/
+.address li:after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 70%;
+    background-color: #f8f8f8;
     margin-top: 1%;
     display: block;
     opacity: 1;
     position: relative;
-    z-index: 120;} 
+    z-index: 120;
+}
 
-    @media screen and (768px <= width <= 1030px)
-    {.address li:after{justify-content: center;
+@media screen and (768px <=width <=1030px) {
+    .address li:after {
+        justify-content: center;
         width: 100%;
         vertical-align: middle;
         margin: auto;
-      }}
-      @media screen and (max-width: 767px) 
-      {.address li:after{justify-content: center;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .address li:after {
+        justify-content: center;
         width: 100%;
         vertical-align: middle;
         margin: auto;
-      }}
- /* ラジオボタンをOFF*/  
- .address input{display:none ;}
+    }
+}
+
+/* ラジオボタンをOFF*/
+.address input {
+    display: none;
+}
 
 
 
 
 
-   
 
-   /* 写真のサイズ*/ 
-.photo{width: 450px;
+
+/* 写真のサイズ*/
+.photo {
+    width: 450px;
     border: solid 3px #fefefefc;
     height: 300px;
     position: relative;
     justify-content: center;
-left: 0%;}
-
-    @media screen and (768px <= width <= 1030px)
-    {.photo{
-        width: 90%;
-        margin:0 auto;   /* 写真が中央に来る*/
-        left: 0%;
-        aspect-ratio: 5 / 3;}
-}
-
-@media screen and (max-width: 767px){.photo{
-    width: 65vw;
-    height: auto;
-    margin:0 auto;   /* 写真が中央に来る*/
     left: 0%;
-    aspect-ratio: 5 / 3;}
+}
+
+@media screen and (768px <=width <=1030px) {
+    .photo {
+        width: 90%;
+        margin: 0 auto;
+        /* 写真が中央に来る*/
+        left: 0%;
+        aspect-ratio: 5 / 3;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .photo {
+        width: 65vw;
+        height: auto;
+        margin: 0 auto;
+        /* 写真が中央に来る*/
+        left: 0%;
+        aspect-ratio: 5 / 3;
+    }
 }
 
 
 
 
 
- /* 解説*/ 
-.kaisetu{background-color: #ffffff;
-        border-bottom-style: solid;
-        border-bottom-width:5px;
-        font-size: 15px;
-        width: 98%;
-        margin-left:1% ;
-        margin-right:1% ;
+/* 解説*/
+.kaisetu {
+    background-color: #ffffff;
+    border-bottom-style: solid;
+    border-bottom-width: 5px;
+    font-size: 15px;
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
     border-bottom-color: red;
-    z-index: 20;}    
-    @media screen and (max-width: 767px)
-    {.kaisetu{font-size: 2.5vw;
-        border-bottom-width:0.8vw;}}
-    /*食レポ*/ 
-    .report{color: #ffffff;
+    z-index: 20;
+}
+
+@media screen and (max-width: 767px) {
+    .kaisetu {
+        font-size: 2.5vw;
+        border-bottom-width: 0.8vw;
+    }
+}
+
+/*食レポ*/
+.report {
+    color: #ffffff;
     position: relative;
     width: 98%;
     padding-left: 2%;
-    margin-left:0% ;
-    margin-right:0% ;
+    margin-left: 0%;
+    margin-right: 0%;
 }
 
-@media screen and (max-width: 767px)
-{    .report {color: #ffffff;
- font-size: 2.5vw;
+@media screen and (max-width: 767px) {
+    .report {
+        color: #ffffff;
+        font-size: 2.5vw;
+    }
 }
-}
 
 
 
@@ -1023,8 +1324,9 @@ left: 0%;}
 
 
 
-/*mapを表示するボタン*/ 
-.map-button a{position: absolute;
+/*mapを表示するボタン*/
+.map-button a {
+    position: absolute;
     top: 103%;
     left: 30%;
     width: 30%;
@@ -1037,480 +1339,579 @@ left: 0%;}
     background-color: rgb(0, 0, 0);
     border-radius: 10px;
     color: rgb(255, 255, 255);
-    border: solid 3px #ffffff;}
+    border: solid 3px #ffffff;
+}
 
- /*和食ほうりんのmapを表示するボタン*/ 
-    .map-button:nth-of-type(2) a {position: absolute;
-        top: 103%;
-        width: 30%;
-        padding: auto;
-        height: 10%;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        background-color: rgb(0, 0, 0);
-        border-radius: 10px;
-        color: rgb(255, 255, 255);
-        border: solid 3px #ffffff;}
-       
-        @media screen and (768px <= width <= 1030px)
-        {.map-button a{top: 5%;
-            height: 15%;
-            left:35%;
-            position: relative;
-            justify-content: center;
-            vertical-align: middle; }
-            .map-button:nth-of-type(2) a {top: 5%;
-                position: relative;
-                left: auto;
-                left: 35%;
-                height: 15%;
-                justify-content: center;
-                vertical-align: middle; }
-        }
-        @media screen and (max-width: 767px) 
-        {.map-button a{top: 5%;
-            height: 3vw;
-            left:35%;
-            position: relative;
-            justify-content: center;
-            vertical-align: middle; }
-            .map-button:nth-of-type(2) a {top: 5%;
-                position: relative;
-                left: auto;
-                left: 35%;
-                height: 3vw;
-                justify-content: center;
-                vertical-align: middle; }
-        }
-
-
-
-
-
-
-
-
-    .map-button a::after{background-color: #ff0000;
+/*和食ほうりんのmapを表示するボタン*/
+.map-button:nth-of-type(2) a {
     position: absolute;
-    top:70%;
+    top: 103%;
+    width: 30%;
+    padding: auto;
+    height: 10%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    border: solid 3px #ffffff;
+}
+
+@media screen and (768px <=width <=1030px) {
+    .map-button a {
+        top: 5%;
+        height: 15%;
+        left: 35%;
+        position: relative;
+        justify-content: center;
+        vertical-align: middle;
+    }
+
+    .map-button:nth-of-type(2) a {
+        top: 5%;
+        position: relative;
+        left: auto;
+        left: 35%;
+        height: 15%;
+        justify-content: center;
+        vertical-align: middle;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .map-button a {
+        top: 5%;
+        height: 3vw;
+        left: 35%;
+        position: relative;
+        justify-content: center;
+        vertical-align: middle;
+    }
+
+    .map-button:nth-of-type(2) a {
+        top: 5%;
+        position: relative;
+        left: auto;
+        left: 35%;
+        height: 3vw;
+        justify-content: center;
+        vertical-align: middle;
+    }
+}
+
+
+
+
+
+
+
+
+.map-button a::after {
+    background-color: #ff0000;
+    position: absolute;
+    top: 70%;
     width: 0px;
     height: 5%;
     z-index: 1;
     content: '';
-    display: block;}
+    display: block;
+}
 
 
-    .map-button a:hover::after{background-color: #ff0000;
-        position: absolute;
-        transition: all 0.4s;
-        top:70%;
-        width: 93%;
-        height: 5%;
-        z-index: 1;
-        content: '';
-        display: block;}
-        #map-checkbox:checked label a, #map-checkbox2-1:checked label a   
-        {opacity: 0;}
+.map-button a:hover::after {
+    background-color: #ff0000;
+    position: absolute;
+    transition: all 0.4s;
+    top: 70%;
+    width: 93%;
+    height: 5%;
+    z-index: 1;
+    content: '';
+    display: block;
+}
+
+#map-checkbox:checked label a, #map-checkbox2-1:checked label a {
+    opacity: 0;
+}
 
 
-        .map-background {opacity: 0;
-            position: absolute;
-            left: 0%;
-            top:0%;
-            width: 0px;
-            height: 0px;
-            border: solid 1px #fffffffc;
-            background-color: rgba(0, 0, 0, 0);
-            transition: all 0.3s;}
-            @media screen and (768px <= width <= 1030px){
-                .map-background{ position: relative;
-            left: 0%;
-            top:-100%;}}
+.map-background {
+    opacity: 0;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 0px;
+    height: 0px;
+    border: solid 1px #fffffffc;
+    background-color: rgba(0, 0, 0, 0);
+    transition: all 0.3s;
+}
+
+@media screen and (768px <=width <=1030px) {
+    .map-background {
+        position: relative;
+        left: 0%;
+        top: -100%;
+    }
+}
 
 
 
 
 
-    .map-background span {
-        opacity: 0;} 
-        /*mapの×ボタン*/ 
-        #map-checkbox:checked  ~.map-background span,
-        #map-checkbox2-1:checked  ~.map-background span,
-        #map-checkbox3-1:checked  ~.map-background span,
-        #map-checkbox4-1:checked  ~.map-background span,
-        #map-checkbox5-1:checked  ~.map-background span,
-        #map-checkbox6-1:checked  ~.map-background span {position: absolute;
-            background-color: #000000;
-                                border: solid 3px #ffffff;
-                                display: flex;
-                                opacity: 1;
-                                top: 0.5%;
-                                left: 93%;
-                                height: 7%;
-                                width:auto;
-                                aspect-ratio: 1 / 1;
-                                z-index: 130;} 
-@media screen and (max-width: 767px) 
-{   #map-checkbox:checked  ~.map-background span,
-    #map-checkbox2-1:checked  ~.map-background span,
-    #map-checkbox3-1:checked  ~.map-background span,
-    #map-checkbox4-1:checked  ~.map-background span,
-    #map-checkbox5-1:checked  ~.map-background span,
-    #map-checkbox6-1:checked  ~.map-background span {position: relative;
+.map-background span {
+    opacity: 0;
+}
+
+/*mapの×ボタン*/
+#map-checkbox:checked~.map-background span,
+#map-checkbox2-1:checked~.map-background span,
+#map-checkbox3-1:checked~.map-background span,
+#map-checkbox4-1:checked~.map-background span,
+#map-checkbox5-1:checked~.map-background span,
+#map-checkbox6-1:checked~.map-background span {
+    position: absolute;
+    background-color: #000000;
+    border: solid 3px #ffffff;
+    display: flex;
+    opacity: 1;
+    top: 0.5%;
+    left: 93%;
+    height: 7%;
+    width: auto;
+    aspect-ratio: 1 / 1;
+    z-index: 130;
+}
+
+@media screen and (max-width: 767px) {
+
+    #map-checkbox:checked~.map-background span,
+    #map-checkbox2-1:checked~.map-background span,
+    #map-checkbox3-1:checked~.map-background span,
+    #map-checkbox4-1:checked~.map-background span,
+    #map-checkbox5-1:checked~.map-background span,
+    #map-checkbox6-1:checked~.map-background span {
+        position: relative;
         background-color: #000000;
         left: 0%;
-                            display: flex;
-                            opacity: 1;
-                            aspect-ratio: 1 / 1;
-                            height: 7%;
-                            width:auto;
-                             border: solid 2px #ffffff;
-                            z-index: 130;} }
-
-
-
-     .map-background span::before {content: '';
-        display: block;
-        height:10%;
-        width: 90%;
-        position: absolute;
-        }
-        .map-background span::after {content: '';
-            display: block;
-            height:10%;
-            width: 90%;
-            background-color: #ffffff;
-            border: solid 1px #ffffff;
-            position: absolute;}
-                                             
-
-            #map-checkbox:checked  ~.map-background span::before,
-            #map-checkbox2-1:checked  ~.map-background span::before,      
-            #map-checkbox3-1:checked  ~.map-background span::before,
-            #map-checkbox4-1:checked  ~.map-background span::before,
-            #map-checkbox5-1:checked  ~.map-background span::before,
-            #map-checkbox6-1:checked  ~.map-background span::before{
-                top: 40%;
-                display: block;
-                border: solid 1px #ffffff;
-                background-color: #ffffff;
-                position: absolute;
-                transform: rotate(45deg);
-                z-index: 150;
-                transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;}
-
-                
-            #map-checkbox:checked  ~.map-background span::after,
-            #map-checkbox2-1:checked  ~.map-background span::after,
-            #map-checkbox3-1:checked  ~.map-background span::after,
-            #map-checkbox4-1:checked  ~.map-background span::after,
-            #map-checkbox5-1:checked  ~.map-background span::after,
-            #map-checkbox6-1:checked  ~.map-background span::after  {
-                top: 40%;
-                background-color: #ffffff;
-                position: absolute;
-                transform: rotate(135deg);
-                z-index: 150;
-                transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;}   
-
-                
-
-    #map-checkbox:checked ~.map-background,
-    #map-checkbox2-1:checked ~.map-background,
-    #map-checkbox3-1:checked ~.map-background,
-    #map-checkbox4-1:checked ~.map-background, 
-    #map-checkbox5-1:checked ~.map-background,
-    #map-checkbox6-1:checked ~.map-background   {
+        display: flex;
         opacity: 1;
+        aspect-ratio: 1 / 1;
+        height: 7%;
+        width: auto;
+        border: solid 2px #ffffff;
+        z-index: 130;
+    }
+}
+
+
+
+.map-background span::before {
+    content: '';
+    display: block;
+    height: 10%;
+    width: 90%;
+    position: absolute;
+}
+
+.map-background span::after {
+    content: '';
+    display: block;
+    height: 10%;
+    width: 90%;
+    background-color: #ffffff;
+    border: solid 1px #ffffff;
+    position: absolute;
+}
+
+
+#map-checkbox:checked~.map-background span::before,
+#map-checkbox2-1:checked~.map-background span::before,
+#map-checkbox3-1:checked~.map-background span::before,
+#map-checkbox4-1:checked~.map-background span::before,
+#map-checkbox5-1:checked~.map-background span::before,
+#map-checkbox6-1:checked~.map-background span::before {
+    top: 40%;
+    display: block;
+    border: solid 1px #ffffff;
+    background-color: #ffffff;
+    position: absolute;
+    transform: rotate(45deg);
+    z-index: 150;
+    transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
+}
+
+
+#map-checkbox:checked~.map-background span::after,
+#map-checkbox2-1:checked~.map-background span::after,
+#map-checkbox3-1:checked~.map-background span::after,
+#map-checkbox4-1:checked~.map-background span::after,
+#map-checkbox5-1:checked~.map-background span::after,
+#map-checkbox6-1:checked~.map-background span::after {
+    top: 40%;
+    background-color: #ffffff;
+    position: absolute;
+    transform: rotate(135deg);
+    z-index: 150;
+    transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
+}
+
+
+
+#map-checkbox:checked~.map-background,
+#map-checkbox2-1:checked~.map-background,
+#map-checkbox3-1:checked~.map-background,
+#map-checkbox4-1:checked~.map-background,
+#map-checkbox5-1:checked~.map-background,
+#map-checkbox6-1:checked~.map-background {
+    opacity: 1;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: absolute;
+    left: -105%;
+    top: -5%;
+    width: 200%;
+    height: 200%;
+    border: solid 1px #fffffffc;
+    background-color: rgb(0, 0, 0);
+    transition: all 0.3s;
+    z-index: 120;
+}
+
+@media screen and (768px <=width <=1030px) {
+
+    #map-checkbox:checked~.map-background,
+    #map-checkbox2-1:checked~.map-background,
+    #map-checkbox3-1:checked~.map-background,
+    #map-checkbox4-1:checked~.map-background,
+    #map-checkbox5-1:checked~.map-background,
+    #map-checkbox6-1:checked~.map-background {
+
+        display: flex;
+        padding-top: 1%;
         padding-left: 10px;
         padding-right: 10px;
-        position: absolute;
-        left: -105%;
-        top:-5%;
-        width: 200%;
+        position: relative;
+        left: -30%;
+        top: -150%;
+        width: 150%;
         height: 200%;
         border: solid 1px #fffffffc;
         background-color: rgb(0, 0, 0);
         transition: all 0.3s;
-        z-index: 120;}
+        z-index: 120;
+    }
+}
 
-        @media screen and (768px <= width <= 1030px){
+@media screen and (max-width: 767px) {
 
-            #map-checkbox:checked ~.map-background,
-            #map-checkbox2-1:checked ~ .map-background,
-            #map-checkbox3-1:checked ~.map-background,
-            #map-checkbox4-1:checked ~ .map-background, 
-            #map-checkbox5-1:checked ~.map-background,
-            #map-checkbox6-1:checked ~ .map-background   {
-                
-                display: flex;
-                padding-top: 1%;
-                padding-left: 10px;
-                padding-right: 10px;
-                position: relative;
-                left: -30%;
-                top:-150%;
-                width: 150%;
-                height: 200%;
-                border: solid 1px #fffffffc;
-                background-color: rgb(0, 0, 0);
-                transition: all 0.3s;
-                z-index: 120;}}
-                @media screen and (max-width: 767px) 
-                {   #map-checkbox:checked ~.map-background,
-                    #map-checkbox2-1:checked ~.map-background,
-                    #map-checkbox3-1:checked ~.map-background,
-                    #map-checkbox4-1:checked ~.map-background, 
-                    #map-checkbox5-1:checked ~.map-background,
-                    #map-checkbox6-1:checked ~.map-background   {
-                        display: flex;
-                        padding-top: 1%;
-                        padding-left: 10px;
-                        padding-right: 10px;
-                        position: relative;
-                        left:-30%;
-                        top:-100%;
-                        width: 150%;
-                        height: 150%;
-                        border: solid 1px #fffffffc;
-                        background-color: rgb(0, 0, 0);
-                        transition: all 0.3s;
-                        z-index: 120;}}
-
-
-
-
-
-
-
-
-        
-    #map-checkbox:checked  ~.map-background::after,
-    #map-checkbox2-1:checked ~.map-background::after,
-    #map-checkbox3-1:checked  ~.map-background::after,
-    #map-checkbox4-1:checked ~.map-background::after,
-    #map-checkbox5-1:checked  ~.map-background::after,
-    #map-checkbox6-1:checked ~.map-background::after
-    
-    {
-        content: '';
-        display: block;
-        opacity: 1;
+    #map-checkbox:checked~.map-background,
+    #map-checkbox2-1:checked~.map-background,
+    #map-checkbox3-1:checked~.map-background,
+    #map-checkbox4-1:checked~.map-background,
+    #map-checkbox5-1:checked~.map-background,
+    #map-checkbox6-1:checked~.map-background {
+        display: flex;
+        padding-top: 1%;
+        padding-left: 10px;
+        padding-right: 10px;
         position: relative;
-        left: 40%;
-        top:-1%;
-        width: 10%;
-        height: 90%;
-        background-color: rgb(253, 0, 0);
+        left: -30%;
+        top: -100%;
+        width: 150%;
+        height: 150%;
+        border: solid 1px #fffffffc;
+        background-color: rgb(0, 0, 0);
         transition: all 0.3s;
-        z-index: 103;}
-        @media screen and (768px <= width <= 1030px)
-            {#map-checkbox:checked  ~.map-background::after,
-            #map-checkbox2-1:checked ~.map-background::after,
-            #map-checkbox3-1:checked  ~.map-background::after,
-            #map-checkbox4-1:checked ~.map-background::after,
-            #map-checkbox5-1:checked  ~.map-background::after,
-            #map-checkbox6-1:checked ~.map-background::after
-            
-            {  
-                height: 100%}}
+        z-index: 120;
+    }
+}
 
-   /* google map*/   
-   
-    #map-checkbox:checked ~.map-background .google-map,
-    #map-checkbox2-1:checked ~.map-background .google-map,
-    #map-checkbox3-1:checked ~.map-background .google-map,
-    #map-checkbox4-1:checked ~.map-background .google-map,
-    #map-checkbox5-1:checked ~.map-background .google-map,
-    #map-checkbox6-1:checked ~.map-background .google-map{ 
+
+
+
+
+
+
+
+
+#map-checkbox:checked~.map-background::after,
+#map-checkbox2-1:checked~.map-background::after,
+#map-checkbox3-1:checked~.map-background::after,
+#map-checkbox4-1:checked~.map-background::after,
+#map-checkbox5-1:checked~.map-background::after,
+#map-checkbox6-1:checked~.map-background::after {
+    content: '';
+    display: block;
+    opacity: 1;
+    position: relative;
+    left: 40%;
+    top: -1%;
+    width: 10%;
+    height: 90%;
+    background-color: rgb(253, 0, 0);
+    transition: all 0.3s;
+    z-index: 103;
+}
+
+@media screen and (768px <=width <=1030px) {
+
+    #map-checkbox:checked~.map-background::after,
+    #map-checkbox2-1:checked~.map-background::after,
+    #map-checkbox3-1:checked~.map-background::after,
+    #map-checkbox4-1:checked~.map-background::after,
+    #map-checkbox5-1:checked~.map-background::after,
+    #map-checkbox6-1:checked~.map-background::after {
+        height: 100%
+    }
+}
+
+/* google map*/
+
+#map-checkbox:checked~.map-background .google-map,
+#map-checkbox2-1:checked~.map-background .google-map,
+#map-checkbox3-1:checked~.map-background .google-map,
+#map-checkbox4-1:checked~.map-background .google-map,
+#map-checkbox5-1:checked~.map-background .google-map,
+#map-checkbox6-1:checked~.map-background .google-map {
+    opacity: 1;
+    margin: 0;
+    padding-left: 1%;
+    padding-top: 1%;
+    width: 95%;
+    height: 95%;
+    transition: all 0.3s;
+    z-index: 120;
+}
+
+@media screen and (768px <=width <=1030px) {
+
+    #map-checkbox:checked~.map-background .google-map,
+    #map-checkbox2-1:checked~.map-background .google-map,
+    #map-checkbox3-1:checked~.map-background .google-map,
+    #map-checkbox4-1:checked~.map-background .google-map,
+    #map-checkbox5-1:checked~.map-background .google-map,
+    #map-checkbox6-1:checked~.map-background .google-map {
         opacity: 1;
         margin: 0;
         padding-left: 1%;
-        padding-top:1%;
-        width: 95%; 
+        padding-top: 1%;
+        width: 95%;
         height: 95%;
         transition: all 0.3s;
         z-index: 120;
     }
-
-    @media screen and (768px <= width <= 1030px){
-        #map-checkbox:checked ~.map-background .google-map,
-        #map-checkbox2-1:checked ~.map-background .google-map,
-        #map-checkbox3-1:checked ~.map-background .google-map,
-        #map-checkbox4-1:checked ~.map-background .google-map,
-        #map-checkbox5-1:checked ~.map-background .google-map,
-        #map-checkbox6-1:checked ~.map-background .google-map
-        { opacity: 1;
-            margin: 0;
-            padding-left: 1%;
-            padding-top:1%;
-            width: 95%; 
-            height: 95%;
-            transition: all 0.3s;
-            z-index: 120;}}
-            @media screen and (max-width: 767px){
-                #map-checkbox:checked ~.map-background .google-map,
-                #map-checkbox2-1:checked ~.map-background .google-map,
-                #map-checkbox3-1:checked ~.map-background .google-map,
-                #map-checkbox4-1:checked ~.map-background .google-map,
-                #map-checkbox5-1:checked ~.map-background .google-map,
-                #map-checkbox6-1:checked ~.map-background .google-map
-                { opacity: 1;
-                    margin: 0;
-                    padding-left: 0%;
-                    padding-top:1%;
-                    width: 95%; 
-                    height: 95%;
-                    transition: all 0.3s;
-                    z-index: 120;}}
-        .google-map {
-            opacity: 0;
-            padding-top:0px;
-            padding: 0;
-            margin: 0;
-            position: absolute;  
-            width: 0px;
-            height:0px;
-            border: 0;
-            transition: all 0.3s;}
-
-
-
- /* 要素と要素のスキマ*/ 
-    .space {
-        margin-top: 100px
-      }    
-          
-
-/* 戻るボタン*/ 
-@media screen and (1031px <= width <= 10000px) 
-{
-.modoru{position: fixed;
-    opacity: 0;
-z-index: 99;
-width: 0px;
-height: 0px;
-transform-origin: center top;/*変形を適応する基準をtopとする*/
-transition: all .2s;/*表示の変化を0.3秒に指定*/
 }
 
-.modoru.active{position: fixed;
-                opacity: 1;
-                z-index: 99;
-                width: 70px;
-                height: 70px;;
-                display: block;}}
+@media screen and (max-width: 767px) {
+
+    #map-checkbox:checked~.map-background .google-map,
+    #map-checkbox2-1:checked~.map-background .google-map,
+    #map-checkbox3-1:checked~.map-background .google-map,
+    #map-checkbox4-1:checked~.map-background .google-map,
+    #map-checkbox5-1:checked~.map-background .google-map,
+    #map-checkbox6-1:checked~.map-background .google-map {
+        opacity: 1;
+        margin: 0;
+        padding-left: 0%;
+        padding-top: 1%;
+        width: 95%;
+        height: 95%;
+        transition: all 0.3s;
+        z-index: 120;
+    }
+}
+
+.google-map {
+    opacity: 0;
+    padding-top: 0px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border: 0;
+    transition: all 0.3s;
+}
 
 
 
+/* 要素と要素のスキマ*/
+.space {
+    margin-top: 100px
+}
 
 
- /* 以下フッタｰ */
-    .sns{position: absolute;
-        bottom:-900px;
-        z-index: 1000;
-        background-color: rgb(42, 42, 42);
-        width: 100%;
-        height: 300px;
-        justify-content: center;
-        vertical-align: middle;
-        margin: auto
+/* 戻るボタン*/
+@media screen and (1031px <=width <=10000px) {
+    .modoru {
+        position: fixed;
+        opacity: 0;
+        z-index: 99;
+        width: 0px;
+        height: 0px;
+        transform-origin: center top;
+        /*変形を適応する基準をtopとする*/
+        transition: all .2s;
+        /*表示の変化を0.3秒に指定*/
     }
 
-    @media screen and (768px <= width <= 1030px)
-    {.sns{
+    .modoru.active {
+        position: fixed;
+        opacity: 1;
+        z-index: 99;
+        width: 70px;
+        height: 70px;
+        ;
+        display: block;
+    }
+}
+
+
+
+
+
+/* 以下フッタｰ */
+.sns {
+    position: absolute;
+    bottom: -900px;
+    z-index: 1000;
+    background-color: rgb(42, 42, 42);
+    width: 100%;
+    height: 300px;
+    justify-content: center;
+    vertical-align: middle;
+    margin: auto
+}
+
+@media screen and (768px <=width <=1030px) {
+    .sns {
         height: 200px;
-    }}
-    @media screen and (max-width: 767px) 
-    {.sns{
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .sns {
         height: 150px;
-    }}
+    }
+}
 
 
 
 
-    .sns-position{top:50px;
-        width: 250px;
-        display: grid;
-        text-align: center;
-        justify-content: center;
-        vertical-align: middle;
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;} 
+.sns-position {
+    top: 50px;
+    width: 250px;
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
 
-        @media screen and (768px <= width <= 1030px)
-        { .sns-position{top:20px;
-        width:200px}}
+@media screen and (768px <=width <=1030px) {
+    .sns-position {
+        top: 20px;
+        width: 200px
+    }
+}
 
-        @media screen and (max-width: 767px)        
-        { .sns-position{top:20px;
-            width: 200px;
-            }}
-    
-
-
-            .sns-position a {
-            margin: 10px ;/* リンク間のマージンを設定 */
-            text-decoration: none;
-        }
-
-        .D1{width: 50px;
-            height: 50px;
-            position: relative;}        
-   
-        .D2{width: 50px;
-                height: 50px;
-                text-align: center;
-        justify-content: center;
-        vertical-align: middle;
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-
-
-                position: relative;
-                top: 50px;}      
- 
- 
-@media screen and (768px <= width <= 1030px)               
-  {.D1{width: 40px;
-    height: 40px;}        
-
-.D2{width: 40px;
-    top:10px;
-    height: 40px;}}              
-@media screen and (max-width: 767px) 
-{.D1{width: 30px;
-    height: 30px;}        
-
-.D2{width:40px;
-    top:10px;
-    height: 40px;}} 
+@media screen and (max-width: 767px) {
+    .sns-position {
+        top: 20px;
+        width: 200px;
+    }
+}
 
 
 
+.sns-position a {
+    margin: 10px;
+    /* リンク間のマージンを設定 */
+    text-decoration: none;
+}
 
-            
-    
-    .credit{position: relative;
-            color: #ffffff;
-            top: 60px;
-            align-items: center;
-            justify-content: center;
-            vertical-align: middle;
-            margin: auto;
-            max-width: 100%;
-            max-height: 100%;
-            display: flex;
-            width: auto;
-            white-space: nowrap;}
-@media screen and (768px <= width <= 1030px)       
-{.credit{top:10px;
-    margin: 100px;}}
+.D1 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
 
-    @media screen and (max-width: 767px) 
-    {.credit{top:10px;
-        margin: 100px;}}
-        
+.D2 {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+
+    position: relative;
+    top: 50px;
+}
+
+
+@media screen and (768px <=width <=1030px) {
+    .D1 {
+        width: 40px;
+        height: 40px;
+    }
+
+    .D2 {
+        width: 40px;
+        top: 10px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .D1 {
+        width: 30px;
+        height: 30px;
+    }
+
+    .D2 {
+        width: 40px;
+        top: 10px;
+        height: 40px;
+    }
+}
+
+
+
+
+
+
+.credit {
+    position: relative;
+    color: #ffffff;
+    top: 60px;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    width: auto;
+    white-space: nowrap;
+}
+
+@media screen and (768px <=width <=1030px) {
+    .credit {
+        top: 10px;
+        margin: 100px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .credit {
+        top: 10px;
+        margin: 100px;
+    }
+}
